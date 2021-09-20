@@ -1,3 +1,4 @@
+import forEach from 'lodash/forEach';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
@@ -51,7 +52,7 @@ class FloatCart extends Component {
     const { cartProducts, updateCart } = this.props;
     let productAlreadyInCart = false;
 
-    cartProducts.forEach(cp => {
+    forEach(cartProducts, cp => {
       if (cp.id === product.id) {
         cp.quantity += product.quantity;
         productAlreadyInCart = true;
